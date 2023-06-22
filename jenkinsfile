@@ -1,17 +1,14 @@
 pipeline{
  agent any
  stages{
-    stage('Non Prod Infra : Creation'){
+    stage('Non Prod Talend : Build'){
         steps{
             script{
-                sh 'echo running non prod terraform scripts'
-                sh 'terraform --version'
-                if(env.BRANCH_NAME == 'develop'){
-                    dir("DEV/ECR"){
-                        sh 'terraform --version'
-                        sh 'terraform init'
-                        sh 'terraform plan'
-                        //sh 'terraform apply -auto-approve'
+                sh 'echo running non prod talend scripts'
+                sh 'talend --version'
+                if(env.BRANCH_NAME == 'dev'){
+                    {
+                      sh 'terraform --version
                     }
                 }
             }
